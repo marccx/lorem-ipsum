@@ -1,4 +1,4 @@
-var amount;
+var amount = document.getElementsByClassName('amount')[0].value;
 var words = [
 "a",
 "ac",
@@ -176,24 +176,33 @@ var words = [
 "volutpat",
 "vulputate",
 ];
-var result;
+const selectElement = document.getElementsByClassName('amount')[0];
 
-function change_amout_value() {
-    var amount = document.getElementsByClassName("amount")[0].value;
-}
-function generate_words(amount) {
-    var result = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, ";
+selectElement.addEventListener('change', (event) => {
+  amount = event.target.value;
+  // console.log(amount);
+  document.getElementsByClassName('amount')[0].setAttribute('value', amount);
+});
+
+function print_result() {
+  var result = "";
     for (let i = 0; i < amount; i++) {
-        result = result + words[Math.floor(Math.random() * 10)] + " ";
+        result = result + words[Math.floor(Math.random() * 175)] + " ";
     }
+    document.getElementsByClassName("result")[0].innerHTML = result.replace(/[.]\s+[a-z]/g , function(v) { return v.toUpperCase(); });
+    // console.log(result);
     return result;
 }
+var copybtn = document.getElementsByClassName('copybtn')[0];
+copybtn.addEventListener('click', (event) => {
+  var copyText = document.getElementsByClassName("result")[0];
 
-function generate_text(amount) {
-    return generate_words(amount);
-}
-change_amout_value();
-function print_result() {
-    document.getElementsByClassName("result")[0].innerHTML = generate_text(amount);
-}
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.innerHTML);
+
+  // Alert the copied text
+
+});
+
+
 print_result();

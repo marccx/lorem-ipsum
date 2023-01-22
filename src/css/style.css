@@ -16,4 +16,42 @@ body {
 }
 .result {
     letter-spacing: 0.5px;
+    border: 1px solid #ddd;
+    padding: 15px 20px;
+    padding-top: 30px;
+}
+.center-align {
+    display: flex;
+    justify-content: center;
+}
+input,
+select {
+    border-radius: 0px !important;
+}
+
+button[type=submit] {
+    border-radius: 0px !important;
+    transition: 0.2s;
+}
+button[type=submit]:hover {
+    background-color: #000;
+    color: #fff;
+}
+.result-area {
+    margin-top: 20px;
+    position: relative;
+}
+.copybtn {
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 0px;
+    color: #fff;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.copybtn:hover {
+    background-color: #fff;
+    color: #000;
 }
