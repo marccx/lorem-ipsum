@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Urbanist:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/skeleton.css">
     <link rel="stylesheet" href="src/css/style.css">
 </head>
@@ -18,7 +18,7 @@
                 </h1>
             </div> 
         </div>
-        <div class="row center-align">
+        <div class="row">
                 <div class="two columns">
                     <input class="u-full-width amount" type="number" value="50">
                 </div>
@@ -28,12 +28,16 @@
                       </select>
                 </div>
                 <div class="two columns">
-                    <button type="submit" onclick="print_result()">Generate</button>
+                    <button type="submit" onclick="print_result()" class="generate-btn">Generate</button>
                 </div>
+                <div class="two columns mg-left-auto">
+                    <button class="copybtn">Copy</button>
+                </div>
+                
         </div>
         <div class="row">
             <div class="result-area">
-                <button class="copybtn">Click to copy text</button>
+                
             <p class="result">
             </p>
             </div>
